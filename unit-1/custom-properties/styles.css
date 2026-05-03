@@ -134,7 +134,7 @@ body {
 .cards {
     /* display, gap (use calc to derive from a token), columns */
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     gap:calc(var(--space-md) * 2);
     padding: calc(var(--space-sm) * 2);
     margin-bottom: calc(var(--space-md) + 0.5rem);
@@ -148,6 +148,7 @@ body {
 .card {
     /* background, padding, border-radius, shadow */
     /* Use a var() with a fallback value here. */
+    flex: 1 1 280px;
     background-color: var(--card-bg-color, #f0f0f0);
     padding: var(--space-md);
     border-radius: var(--border-radius);
