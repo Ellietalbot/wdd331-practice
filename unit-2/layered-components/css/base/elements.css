@@ -1,0 +1,60 @@
+/* Base element styles: body, headings, links, lists.
+   No classes here, only bare HTML element selectors.
+   Reference tokens with var(). */
+
+/* TODO: Style body, headings, links, and other base elements */
+
+body{
+   background-color: var(--color-background);
+   color: var(--color-text);
+   font-family: var(--font-body);
+   font-size: var(--font-size-sm);
+   font-weight: var(--font-weight-normal);
+   line-height: var(--line-height-body);
+}
+
+:is(h1, h2, h3){
+   color: var(--color-primary);
+   font-family: var(--font-heading);
+   font-weight: var(--font-weight-normal);
+   line-height: var(--line-height-header);
+}
+
+h1{
+   margin-top: var(--space-lg);
+   font-size: var(--font-size-xl);
+   padding-bottom: var(--space-lg);
+}
+
+h2{
+   font-size: var(--font-size-lg);
+   padding-bottom: var(--space-md);
+}
+
+h3{
+   font-size: var(--font-size-md);
+   padding-bottom: var(--space-sm);
+}
+
+a{
+   color: var(--color-primary);
+   font-weight: var(--font-weight-bold);
+   text-decoration: none;
+   &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+   }
+
+   &:hover{
+      text-decoration: underline
+   }
+}
+
+ul, ol{
+   list-style: none;
+   padding-left: var(--space-sm);
+}
+
+li{
+   margin-bottom: var(--space-sm);
+}
