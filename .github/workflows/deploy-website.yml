@@ -25,7 +25,9 @@ jobs:
         run: npm ci
 
       - name: Build CSS
-        run: npm run build
+        run: | 
+          npm run build
+          cd unit-2/lightning-css-demo && npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
