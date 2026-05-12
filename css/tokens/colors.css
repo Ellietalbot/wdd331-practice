@@ -1,0 +1,12 @@
+:root {
+  --bg: #FFFFFF;
+  --surface: #FFF0E8;
+  --border: #F0E8E4;
+
+  --primary: #FF5C00;
+  --secondary: #FF2D8A;
+
+  --text: #1A0A05;
+  --muted: #888888;
+  --subtle: #BBBBBB;
+}
