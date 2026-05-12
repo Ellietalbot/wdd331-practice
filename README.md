@@ -11,11 +11,14 @@ Each week I add new pages and styles as I work through the course
 assignments. The site deploys automatically to GitHub Pages on
 every push to main.
 
-## Pages
+## Build Tool & Instructions for Build
+Lightning CSS
+Install the dependencies with: npm install
+Run the build: npm run build
 
-- [Home](index.html)
 ## Pages
 
 - [Home](index.html)
 - [Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Layered Components](unit-1/layered-components/index.html)
+- [Lightning CSS](unit-2/lightning-css-demo/index.html)

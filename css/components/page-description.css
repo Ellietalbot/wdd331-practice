@@ -1,0 +1,7 @@
+.page-description{
+    background-color: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md) var(--space-md-lg);
+}

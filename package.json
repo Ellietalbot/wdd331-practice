@@ -1,0 +1,21 @@
+{
+  "name": "wdd331-practice",
+  "version": "1.0.0",
+  "description": "**Student:** Ellie Talbot **Semester:** Spring 2026 **Live Site:** [View Site](https://github.com/Ellietalbot/wdd331-practice.git)",
+  "main": "index.js",
+  "scripts": {
+    "build": "lightningcss --bundle --minify --targets \">= 0.25%\" css/main.css -o dist/styles.css",
+    "watch": "chokidar \"css/**/*.css\" -c \"npm run build\" --debounce 600"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ellietalbot/wdd331-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "lightningcss-cli": "^1.32.0"
+  }
+}
