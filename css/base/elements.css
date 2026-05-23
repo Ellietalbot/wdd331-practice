@@ -1,58 +1,58 @@
 body {
-  margin: var(--space-xl);
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
+  margin: var(--spacing-xl);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height);
 }
- 
+
 :where(h1, h2, h3) {
-  color: var(--primary);
-  font-family: var(--font-sans);
+  color: var(--color-accent);
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height);
 }
- 
+
 h1 {
-  font-size: var(--text-2xl);
-  padding: var(--space-sm);
+  font-size: var(--font-size-lg);
+  padding: var(--spacing-sm);
 }
- 
+
 h2 {
-  font-size: var(--text-xl);
-  color: var(--secondary);
-  padding: var(--space-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-accent-hover);
+  padding: var(--spacing-sm);
 }
- 
+
 h3 {
-  font-size: var(--text-lg);
-  color: var(--text);
-  padding: var(--space-xs);
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  padding: var(--spacing-xs);
 }
- 
+
 a {
-  color: var(--primary);
+  color: var(--color-link);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
- 
+
   &:focus-visible {
-    outline: 2px solid var(--primary);
+    outline: var(--outline-width) solid var(--color-accent);
     outline-offset: 2px;
   }
- 
+
   &:hover {
-    color: var(--secondary);
+    color: var(--color-link-hover);
     text-decoration: underline;
   }
 }
- 
+
 ul, ol {
   list-style: none;
-  padding-left: var(--space-sm);
+  padding-left: var(--spacing-sm);
 }
- 
+
 li {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--spacing-sm);
 }
