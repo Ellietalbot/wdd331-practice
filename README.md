@@ -11,6 +11,8 @@ Each week I add new pages and styles as I work through the course
 assignments. The site deploys automatically to GitHub Pages on
 every push to main.
 
+This site now supports dark mode, with color tokens in tokens/colors.css
+
 ## Build Tool & Instructions for Build
 Lightning CSS
 Install the dependencies with: npm install

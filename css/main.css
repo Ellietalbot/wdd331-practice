@@ -8,3 +8,4 @@
 
 @import url("components/card.css") layer(components);
 @import url("components/page-description.css") layer(components);
+@import url('components/theme-toggle.css') layer(components);
