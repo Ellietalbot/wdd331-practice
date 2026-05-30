@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backdrop Filter Performance Demo</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* ====================================
+   VERSION 1: FROSTED GLASS HEADER
+   ==================================== */
+/* header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 150px;  
+    padding: 1rem 2rem;
+
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+} */
+
+/* ====================================
+   VERSION 2: SOLID HEADER
+   Uncomment for comparison
+   ==================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    padding: 1rem 2rem;
+
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #444;
+}
+
+.grid {
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.card p {
+    padding: 1rem;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Backdrop Filter Performance Demo</h1>
+    <p>Scroll while recording DevTools Performance.</p>
+</header>
+
+<div class="grid" id="grid"></div>
+
+<script>
+const grid = document.getElementById("grid");
+
+for (let i = 1; i <= 400; i++) {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+        <img src="https://picsum.photos/600/400?random=${i}" alt="Random image">
+        <p>Image Card ${i}</p>
+    `;
+
+    grid.appendChild(card);
+}
+</script>
+
+</body>
+</html>
