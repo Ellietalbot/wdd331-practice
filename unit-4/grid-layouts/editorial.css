@@ -1,0 +1,27 @@
+.editorial-page .layout{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-areas:
+        "main"
+        "sidebar";
+    gap: 1rem;
+
+    @media (min-width: 600px) {
+        grid-template-columns: 1fr 250px;
+        grid-template-areas:
+            "main sidebar";
+    }
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+    }
+}
+
+.tags li {
+    width: fit-content;
+}
