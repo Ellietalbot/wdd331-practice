@@ -24,3 +24,7 @@ Run the build: npm run build
 - [Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Layered Components](unit-1/layered-components/index.html)
 - [Lightning CSS](unit-2/lightning-css-demo/index.html)
+- [Filter Performance Demo](unit-3/filter-performance/demo.html)
+- [Visual Effects](unit-3/visual-effects/index.html)
+- [Cards](unit-4/grid-layouts/cards.html)
+-[Editorial](unit-4/grid-layouts/editorial.html)
