@@ -1,0 +1,43 @@
+.editorial-page .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "main"
+        "sidebar";
+    gap: 1rem;
+
+    @media (min-width: 600px) {
+        grid-template-columns: 1fr 250px;
+        grid-template-areas: "main sidebar";
+    }
+}
+
+main {
+    grid-area: main;
+    container: main / inline-size;  
+}
+
+aside {
+    grid-area: sidebar;
+    container: sidebar / inline-size;
+}
+.card > div:first-child {
+    height: 160px;
+    background-color: var(--color-surface);
+}
+
+
+@container main (min-width: 400px) {
+    .card {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 1rem;
+    }
+}
+
+@container sidebar (max-width: 300px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+}

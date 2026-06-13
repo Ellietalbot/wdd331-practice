@@ -1,0 +1,36 @@
+.editorial-page .layout{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-areas:
+        "main"
+        "sidebar";
+    gap: 1rem;
+    align-items: start;
+    overflow: visible;
+    /*Because the ancestor element scrolls the sticky element can move.*/
+    @media (min-width: 600px) {
+        grid-template-columns: 1fr 250px;
+        grid-template-areas:
+            "main sidebar";
+    }
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+    }
+}
+
+.tags li {
+    width: fit-content;
+}
+
+main  { grid-area: main; }
+aside { 
+    grid-area: sidebar;
+    position: sticky;
+    top: 1rem;
+}

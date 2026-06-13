@@ -1,0 +1,63 @@
+.carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    overscroll-behavior-x: contain;
+
+    padding: 1rem;
+}
+
+.carousel-card {
+    flex: 0 0 clamp(260px, 80vw, 360px);
+
+    scroll-snap-align: start;
+
+    scroll-snap-stop: always;
+
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+}
+
+
+.carousel {
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    color: #6335ff;
+}
+
+.content-section {
+    max-width: 900px;
+    margin: auto;
+    padding: 3rem 1rem;
+}
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .carousel-card {
+        flex: 0 0 95%;
+        padding: 1rem;
+    }
+}
