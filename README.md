@@ -27,4 +27,6 @@ Run the build: npm run build
 - [Filter Performance Demo](unit-3/filter-performance/demo.html)
 - [Visual Effects](unit-3/visual-effects/index.html)
 - [Cards](unit-4/grid-layouts/cards.html)
--[Editorial](unit-4/grid-layouts/editorial.html)
+- [Editorial](unit-4/grid-layouts/editorial.html)
+- [Container Demo](unit-4/advanced/container-demo.css)
+- [Sticky Demo](unit-4/advanced/sticky-demo.html)

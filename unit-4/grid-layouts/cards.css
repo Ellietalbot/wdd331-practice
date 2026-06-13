@@ -2,16 +2,24 @@
     display: grid;
     gap: 1rem;
     margin: 2rem;
+    align-items: stretch;
+    grid-template-rows: auto 1fr;
 
     @media (min-width: 600px) {
-        grid-template-columns: repeat(2, minmax(min(240px, 100%), 1fr));
+        grid-template-columns: repeat(3, minmax(min(240px, 100%), 1fr));
     }
 }
+
 .card {
-    display: flex;
-    flex-direction: column;
-    a{
-        margin-top: auto;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.75rem;
+}
+
+@supports (grid-template-rows: subgrid) {
+    .card {
+        grid-row: span 2;
+        grid-template-rows: subgrid;
     }
 }
 
@@ -23,5 +31,9 @@
 .card > div:last-child {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    justify-content: space-between;
+}
+
+.card > div:last-child > a {
+    margin-top: auto;
 }
