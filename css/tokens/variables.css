@@ -1,10 +1,23 @@
 :root {
     /* Typography */
-    --font-family-sans: system-ui, sans-serif;
-    --font-family-mono: monospace;
-    --font-size-sm: 1.4rem;
-    --font-size-md: 1.6rem;
-    --font-size-lg: 1.8rem;
+    --font-family-heading: "Poppins", sans-serif;
+    --font-family-body: system-ui, sans-serif;
+    --font-size-xs:  1.2rem;   
+    --font-size-sm:  1.5rem;   
+    --font-size-md:  1.8rem;   
+    --font-size-lg: clamp(1.8rem, 0.282vw + 1.694rem, 2.1rem);
+    --font-size-xl: clamp(2.1rem, 0.282vw + 1.994rem, 2.4rem);
+    --font-size-2xl: clamp(2.4rem, 0.282vw + 2.294rem, 2.7rem);
+    --font-size-3xl: clamp(2.7rem, 0.282vw + 2.594rem, 3.0rem);
+    --font-size-4xl: clamp(3.0rem, 0.563vw + 2.789rem, 3.6rem);
+
+    --font-size-body:        var(--font-size-md);
+    --font-size-body-sm:     var(--font-size-sm);
+    --font-size-caption:     var(--font-size-xs);
+    --font-size-heading-sm:  var(--font-size-xl);
+    --font-size-heading-md:  var(--font-size-2xl);
+    --font-size-heading-lg:  var(--font-size-3xl);
+    --font-size-display:     var(--font-size-4xl);
 
     /* Spacing */
     --spacing-xs: 4px;

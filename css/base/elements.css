@@ -2,32 +2,33 @@ body {
   margin: var(--spacing-xl);
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-family-sans);
-  font-size: var(--font-size-md);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height);
 }
 
 :where(h1, h2, h3) {
   color: var(--color-accent);
-  font-family: var(--font-family-sans);
+  font-family: var(--font-family-heading);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height);
+  line-height: 1.2;
 }
 
+
 h1 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-display);
   padding: var(--spacing-sm);
 }
 
 h2 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-heading-lg);
   color: var(--color-accent-hover);
   padding: var(--spacing-sm);
 }
 
 h3 {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-heading-sm);
   color: var(--color-text);
   padding: var(--spacing-xs);
 }
@@ -48,7 +49,8 @@ a {
   }
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
   padding-left: var(--spacing-sm);
 }
