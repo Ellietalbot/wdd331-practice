@@ -18,6 +18,15 @@ Lightning CSS
 Install the dependencies with: npm install
 Run the build: npm run build
 
+## Typography System
+
+Typography tokens are stored in:
+css/tokens/variables.css
+
+Custom Font:
+- Poppins (Google Fonts)
+- font-display strategy: swap
+
 ## Pages
 
 - [Home](index.html)

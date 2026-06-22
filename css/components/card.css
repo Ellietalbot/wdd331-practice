@@ -5,36 +5,32 @@
   padding: var(--spacing-md);
   box-shadow: var(--shadow-sm);
   transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+}
 
-  & a {
-    display: block;
-    color: var(--color-text);
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-md);
-    text-decoration: none;
 
-    &:hover {
-      color: var(--color-accent);
-      text-decoration: none;
-    }
-
-    &:focus-visible {
-      outline: var(--outline-width) solid var(--color-accent);
-      outline-offset: 2px;
-      border-radius: var(--radius-sm);
-    }
-  }
+.project-card a {
+  display: block;
+  color: var(--color-text);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading-sm);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
 
   &:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-    border-color: var(--color-accent);
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: var(--outline-width) solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
   }
 }
 
 .project-card__tag {
   display: inline-block;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-caption);
   font-weight: var(--font-weight-bold);
   color: var(--color-accent);
   background: var(--color-surface);
@@ -46,7 +42,7 @@
 }
 
 .project-card__desc {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-body);
   color: var(--color-text-muted);
   margin-top: var(--spacing-xs);
   line-height: var(--line-height);
