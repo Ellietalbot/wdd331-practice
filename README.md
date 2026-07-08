@@ -39,3 +39,5 @@ Custom Font:
 - [Editorial](unit-4/grid-layouts/editorial.html)
 - [Container Demo](unit-4/advanced/container-demo.css)
 - [Sticky Demo](unit-4/advanced/sticky-demo.html)
+- [Meaningful Motion](unit-6/motion/index.html)
+- [Motion Path Demo](unit-6/motion-path/index.html)
