@@ -9,25 +9,79 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" aria-hidden="true">
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+        </symbol>
+        <symbol id="icon-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/>
+            <path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/>
+            <path d="m19.07 4.93-1.41 1.41"/>
+        </symbol>
+        <symbol id="icon-settings" viewBox="0 0 24 24">
+            <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+            <circle cx="12" cy="12" r="3"/>
+        </symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24">
+            <path d="M18 5h4"/>
+            <path d="M20 3v4"/>
+            <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>
+        </symbol>
+        <symbol id="icon-list-checks" viewBox="0 0 24 24">
+            <path d="M13 5h8"/>
+            <path d="M13 12h8"/>
+            <path d="M13 19h8"/>
+            <path d="m3 17 2 2 4-4"/>
+            <path d="m3 7 2 2 4-4"/>
+        </symbol>
+    </svg>
+    
     <details class="theme-menu">
         <summary class="theme-control">
+            <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true" focusable="false">
+                <use href="#icon-settings"></use>
+            </svg>
             <span class="visually-hidden">Color scheme</span>
         </summary>
         <div class="theme-extra" role="group" aria-label="Choose color scheme">
             <label class="theme-control theme-pick" data-theme-pick="light">
                 <input name="theme-preference" type="radio" value="light">
-                <span aria-hidden="true">&#9788;&#65039;</span>
-                <span class="visually-hidden">Light</span>
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    role="img" aria-labelledby="icon-title-sun">
+                    <title id="icon-title-sun">Light Mode</title>
+                    <use href="#icon-sun"></use>
+                </svg>
             </label>
-            <label class="theme-control theme-pick" data-theme-pick="system">
+            <label class="theme-control theme-pick" data-theme-pick="system" aria-label="System default">
                 <input name="theme-preference" type="radio" value="system" checked>
-                <span aria-hidden="true">&#9881;&#65039;</span>
-                <span class="visually-hidden">System default</span>
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-settings"></use>
+                </svg>
             </label>
             <label class="theme-control theme-pick" data-theme-pick="dark">
                 <input name="theme-preference" type="radio" value="dark">
-                <span aria-hidden="true">&#127766;</span>
-                <span class="visually-hidden">Dark</span>
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    role="img" aria-labelledby="icon-title-moon">
+                    <title id="icon-title-moon">Dark Mode</title>
+                    <use href="#icon-moon"></use>
+                </svg>
             </label>
         </div>
     </details>
@@ -36,14 +90,29 @@
         <h3>WDD 331R Advanced CSS</h3>
         <P>Hi! My name is Ellie. I'm a software engineering student a BYU-Idaho. I enjoy cooking, traveling, and spending time with my family.</P>
         <p>This is a practice site for a css class.</p>
+
     </section>
     <section class="assignments">
-        <h2>Assignments</h2>
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24" width="30" height="30"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true" focusable="false">
+                <use href="#icon-list-checks"></use>
+            </svg>
+            Assignments
+        </h2>
         <ul class="project-grid">
             <li class="project-card">
                 <span class="project-card__tag">Unit 1</span>
                 <a href="unit-1/custom-properties/index.html">
                 Custom Properties and Nesting
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
 
@@ -51,6 +120,12 @@
                 <span class="project-card__tag">Unit 2</span>
                 <a href="unit-2/layered-components/index.html">
                 Layered Components
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
 
@@ -58,42 +133,84 @@
                 <span class="project-card__tag">Unit 2</span>
                 <a href="unit-2/lightning-css-demo/index.html">
                 Lightning CSS
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
             <li class="project-card">
                 <span class="project-card__tag">Unit 3</span>
                 <a href="unit-3/filter-performance/demo.html">
                 Filter Performance Demo
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
             <li class="project-card">
                 <span class="project-card__tag">Unit 3</span>
                 <a href="unit-3/visual-effects/index.html">
                 Visual Effects
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
             <li class="project-card">
                 <span class="project-card__tag">Unit 4</span>
                 <a href="unit-4/grid-layouts/cards.html">
                 Cards
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
             <li class="project-card">
                 <span class="project-card__tag">Unit 4</span>
                 <a href="unit-4/grid-layouts/editorial.html">
                 Editorial
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
             <li class="project-card">
                 <span class="project-card__tag">Unit 4</span>
                 <a href="unit-4/advanced/container-demo.html">
                 Container Demo
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
             <li class="project-card">
                 <span class="project-card__tag">Unit 4</span>
                 <a href="unit-4/advanced/sticky-demo.html">
                 Sticky Demo
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
 
@@ -101,6 +218,12 @@
                 <span class="project-card__tag">Unit 6</span>
                 <a href="unit-6/motion-path/index.html">
                 Meaningful Motion
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
 
@@ -108,11 +231,16 @@
                 <span class="project-card__tag">Unit 6</span>
                 <a href="unit-6/motion-path/index.html">
                 Motion Path Demo
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
                 </a>
             </li>
 
         </ul>
     </section>
-    
 </body>
 </html>

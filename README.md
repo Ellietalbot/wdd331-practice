@@ -30,6 +30,8 @@ Custom Font:
 ## Pages
 
 - [Home](index.html)
+- [Resume](resume.html)
+- [Contact](contact.html)
 - [Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Layered Components](unit-1/layered-components/index.html)
 - [Lightning CSS](unit-2/lightning-css-demo/index.html)
@@ -41,3 +43,4 @@ Custom Font:
 - [Sticky Demo](unit-4/advanced/sticky-demo.html)
 - [Meaningful Motion](unit-6/motion/index.html)
 - [Motion Path Demo](unit-6/motion-path/index.html)
+- [Accessible SVG Icon System](index.html)

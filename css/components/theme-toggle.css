@@ -43,10 +43,6 @@ details.theme-menu {
             outline: var(--outline-width) solid var(--color-accent);
             outline-offset: var(--outline-width);
         }
-
-        &::before {
-            content: '\2699\FE0F';
-        }
     }
 
     .theme-control {
@@ -119,20 +115,12 @@ details.theme-menu {
 }
 
 html:has(input[name='theme-preference'][value='light']:checked) {
-    & details.theme-menu > summary.theme-control::before {
-        content: '\2600\FE0F';
-    }
-
     & details.theme-menu .theme-pick[data-theme-pick='light'] {
         display: none;
     }
 }
 
 html:has(input[name='theme-preference'][value='dark']:checked) {
-    & details.theme-menu > summary.theme-control::before {
-        content: '\1F316';
-    }
-
     & details.theme-menu .theme-pick[data-theme-pick='dark'] {
         display: none;
     }
