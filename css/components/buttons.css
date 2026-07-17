@@ -1,0 +1,22 @@
+.btn-primary {
+    transition: background-color 100ms ease, transform 100ms ease;
+    background-color: var(--color-accent);
+    color: white;
+    font: inherit;
+    font-size: var(--font-size-sm);
+    padding: 10px 20px;
+    margin: 10px ;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+
+    &:hover, &:focus-visible {
+        transition: background-color 100ms ease, transform 300ms ease-out;
+        background-color: var(--color-accent-hover);
+        color: white;
+        transform: scale(105%);
+        border: none;
+        border-radius: 30px;
+        text-decoration: none;
+    }
+}

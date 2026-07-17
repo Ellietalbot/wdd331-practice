@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG Fundamentals — Hand-Coded Icon Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="svg-fundamentals.css">
+</head>
+<body>
+
+<a class="go-back" href="../../index.html">&larr; Home</a>
+
+<header class="site-header">
+  <p class="eyebrow">WDD 331R · Unit 6</p>
+  <h1>Drafting an icon by hand</h1>
+  <p class="lede">A rocket built from four primitives and a seven-command path — no library, no copied markup. Every line below is annotated like a blueprint so you can see the coordinates doing the work.</p>
+</header>
+
+<main>
+
+  <!-- ============ SECTION 1: viewBox scaling proof ============ -->
+  <section class="panel" id="scale-demo">
+    <div class="panel-label"><span class="tick">01</span> viewBox vs. rendered size</div>
+    <h2>Same coordinates, two sizes</h2>
+    <p class="panel-copy">Both icons below share <code>viewBox="0 0 24 24"</code>. Only the CSS width changes. The internal grid stretches to fill whatever box you give it.</p>
+
+    <div class="scale-row">
+      <div class="scale-item">
+        <div class="grid-frame" style="--frame-size:96px;">
+          <svg class="rocket-icon" style="width:64px;height:64px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Rocket icon, small">
+            <use href="#rocket-shape"></use>
+          </svg>
+        </div>
+        <span class="dim-label">64 × 64</span>
+      </div>
+      <div class="scale-item">
+        <div class="grid-frame" style="--frame-size:180px;">
+          <svg class="rocket-icon" style="width:160px;height:160px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Rocket icon, large">
+            <use href="#rocket-shape"></use>
+          </svg>
+        </div>
+        <span class="dim-label">160 × 160</span>
+      </div>
+    </div>
+    <p class="callout"><strong>viewBox="0 0 24 24"</strong> stays fixed. The browser scales 24 internal units to whatever pixel width the CSS sets — 2.67px/unit on the left, 6.67px/unit on the right.</p>
+  </section>
+
+  <!-- Hidden master definition, referenced by <use> throughout the page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="rocket-shape">
+        <g class="layer-fins" fill="currentColor">
+          <polygon points="4,16 7,12 7,19"></polygon>
+          <polygon points="20,16 17,12 17,19"></polygon>
+        </g>
+        <path class="layer-body" d="M12 2 C 15 2 17 7 17 12 L 17 18 L 7 18 L 7 12 C 7 7 9 2 12 2 Z" fill="currentColor"></path>
+        <circle class="layer-window" cx="12" cy="10" r="2" fill="var(--bg-deep)" stroke="currentColor" stroke-width="1"></circle>
+        <g class="layer-flame" transform="rotate(-3 12 20)" fill="currentColor">
+          <polygon points="9,18 15,18 12,23"></polygon>
+        </g>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ============ SECTION 2: path command walk-through ============ -->
+  <section class="panel" id="path-demo">
+    <div class="panel-label"><span class="tick">02</span> Reading the <code>d</code> string</div>
+    <h2>Seven commands, one hull</h2>
+    <p class="panel-copy">Step through the rocket body's path one command at a time. The dot marks the pen's current position; the highlighted segment shows what that command just drew.</p>
+
+    <div class="path-demo-grid">
+      <div class="grid-frame" style="--frame-size:260px;">
+        <svg viewBox="0 0 24 24" width="220" height="220" xmlns="http://www.w3.org/2000/svg" aria-label="Rocket body path being drawn step by step">
+          <polyline id="grid-ticks-x" points=""></polyline>
+          <path id="step-ghost" d="M12 2 C 15 2 17 7 17 12 L 17 18 L 7 18 L 7 12 C 7 7 9 2 12 2 Z" fill="none" stroke="var(--muted)" stroke-width="0.4" stroke-dasharray="1 1"></path>
+          <path id="step-path" d="" fill="none" stroke="var(--accent-2)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></path>
+          <circle id="step-dot" cx="12" cy="2" r="0.9" fill="var(--accent)"></circle>
+        </svg>
+      </div>
+
+      <div class="path-controls">
+        <ol id="step-list" class="step-list"></ol>
+        <div class="step-buttons">
+          <button type="button" id="step-prev" class="btn-outline">← Prev</button>
+          <button type="button" id="step-next" class="btn-solid">Next →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3: layer toggle ============ -->
+  <section class="panel" id="layer-demo">
+    <div class="panel-label"><span class="tick">03</span> Layers &amp; primitives</div>
+    <h2>What each shape contributes</h2>
+    <p class="panel-copy">Toggle a layer to isolate its markup. The rocket uses <strong>two polygons</strong>, <strong>one circle</strong>, and <strong>one path</strong> — grouped where they share a fill.</p>
+
+    <div class="layer-demo-grid">
+      <div class="grid-frame" style="--frame-size:220px;">
+        <svg id="layer-icon" viewBox="0 0 24 24" width="180" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Rocket icon with toggleable layers">
+          <use href="#rocket-shape"></use>
+        </svg>
+      </div>
+
+      <div class="layer-controls">
+        <label class="layer-toggle"><input type="checkbox" data-layer="fins" checked> Fins <span class="tag">polygon × 2, in a &lt;g&gt;</span></label>
+        <label class="layer-toggle"><input type="checkbox" data-layer="body" checked> Body <span class="tag">path — M C L L L C Z</span></label>
+        <label class="layer-toggle"><input type="checkbox" data-layer="window" checked> Window <span class="tag">circle</span></label>
+        <label class="layer-toggle"><input type="checkbox" data-layer="flame" checked> Flame <span class="tag">polygon, in a &lt;g&gt;</span></label>
+
+        <pre class="code-out" id="layer-code"></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4: group transform demo ============ -->
+  <section class="panel" id="group-demo">
+    <div class="panel-label"><span class="tick">04</span> Groups &amp; transforms</div>
+    <h2>One transform, shared or single</h2>
+    <p class="panel-copy">Three bars, one <code>rotate()</code>. Watch what changes when the transform moves from the <code>&lt;g&gt;</code> down to a single child.</p>
+
+    <div class="group-demo-grid">
+      <div class="grid-frame" style="--frame-size:160px;">
+        <svg id="group-icon" viewBox="0 0 24 24" width="120" height="120" xmlns="http://www.w3.org/2000/svg" aria-label="Three bars demonstrating group transform">
+          <g id="bars-group" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line id="bar-1" x1="3" y1="6" x2="21" y2="6"></line>
+            <line id="bar-2" x1="3" y1="12" x2="21" y2="12"></line>
+            <line id="bar-3" x1="3" y1="18" x2="21" y2="18"></line>
+          </g>
+        </svg>
+      </div>
+
+      <div class="group-controls">
+        <div class="radio-row">
+          <label><input type="radio" name="transform-target" value="group" checked> Apply to the &lt;g&gt;</label>
+          <label><input type="radio" name="transform-target" value="child"> Apply to one &lt;line&gt;</label>
+          <label><input type="radio" name="transform-target" value="none"> No transform</label>
+        </div>
+        <pre class="code-out" id="group-code"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="checklist">
+    <div class="panel-label"><span class="tick">05</span> Build checklist</div>
+    <h2>What this file satisfies</h2>
+    <ul class="req-list">
+      <li><code>viewBox="0 0 24 24"</code> with rendered size set entirely by CSS.</li>
+      <li>Four shape primitives across the icon: <code>polygon</code>, <code>circle</code>, and a <code>path</code> using <code>M</code>, <code>C</code>, <code>L</code>, and <code>Z</code>.</li>
+      <li>Two <code>&lt;g&gt;</code> groups — one sharing a fill (fins), one carrying a transform (flame).</li>
+      <li><code>fill="currentColor"</code> throughout, so the icon inherits <code>color</code> from its parent.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Ellie Talbot. Built for WDD 331R Advanced CSS.</p>
+  <ul>
+    <li><a href="https://github.com/Ellietalbot/wdd331-practice">Source on GitHub</a></li>
+  </ul>
+</footer>
+
+<script>
+(function () {
+  // ---------- Section 2: path step-through ----------
+  var steps = [
+    { cmd: "M 12 2",              draw: "M12 2",                                            pt: [12,2],  desc: "Move to the nose tip — lift the pen, no line drawn." },
+    { cmd: "C 15 2 17 7 17 12",   draw: "M12 2 C 15 2 17 7 17 12",                            pt: [17,12], desc: "Curve down the right side of the hull to (17, 12)." },
+    { cmd: "L 17 18",             draw: "M12 2 C 15 2 17 7 17 12 L 17 18",                    pt: [17,18], desc: "Straight line down to the right shoulder." },
+    { cmd: "L 7 18",              draw: "M12 2 C 15 2 17 7 17 12 L 17 18 L 7 18",             pt: [7,18],  desc: "Straight line across the base." },
+    { cmd: "L 7 12",              draw: "M12 2 C 15 2 17 7 17 12 L 17 18 L 7 18 L 7 12",      pt: [7,12],  desc: "Straight line up the left shoulder." },
+    { cmd: "C 7 7 9 2 12 2",      draw: "M12 2 C 15 2 17 7 17 12 L 17 18 L 7 18 L 7 12 C 7 7 9 2 12 2", pt: [12,2], desc: "Curve back up to the nose." },
+    { cmd: "Z",                   draw: "M12 2 C 15 2 17 7 17 12 L 17 18 L 7 18 L 7 12 C 7 7 9 2 12 2 Z", pt: [12,2], desc: "Close the path — done." }
+  ];
+  var stepIndex = 0;
+  var stepList = document.getElementById("step-list");
+  var stepPath = document.getElementById("step-path");
+  var stepDot  = document.getElementById("step-dot");
+  var prevBtn  = document.getElementById("step-prev");
+  var nextBtn  = document.getElementById("step-next");
+
+  steps.forEach(function (s, i) {
+    var li = document.createElement("li");
+    li.className = "step-item";
+    li.innerHTML = '<span class="step-cmd">' + s.cmd + '</span><span class="step-desc">' + s.desc + '</span>';
+    li.dataset.index = i;
+    stepList.appendChild(li);
+  });
+
+  function renderStep() {
+    var s = steps[stepIndex];
+    stepPath.setAttribute("d", s.draw);
+    stepDot.setAttribute("cx", s.pt[0]);
+    stepDot.setAttribute("cy", s.pt[1]);
+    Array.prototype.forEach.call(stepList.children, function (li, i) {
+      li.classList.toggle("active", i === stepIndex);
+      li.classList.toggle("done", i < stepIndex);
+    });
+    prevBtn.disabled = stepIndex === 0;
+    nextBtn.disabled = stepIndex === steps.length - 1;
+  }
+  prevBtn.addEventListener("click", function () { if (stepIndex > 0) { stepIndex--; renderStep(); } });
+  nextBtn.addEventListener("click", function () { if (stepIndex < steps.length - 1) { stepIndex++; renderStep(); } });
+  stepList.addEventListener("click", function (e) {
+    var li = e.target.closest(".step-item");
+    if (!li) return;
+    stepIndex = Number(li.dataset.index);
+    renderStep();
+  });
+  renderStep();
+
+  // ---------- Section 3: layer toggles ----------
+  var layerIcon = document.getElementById("layer-icon");
+  var layerCode = document.getElementById("layer-code");
+  var layerSnippets = {
+    fins:   '<g fill="currentColor">\n  <polygon points="4,16 7,12 7,19"></polygon>\n  <polygon points="20,16 17,12 17,19"></polygon>\n</g>',
+    body:   '<path fill="currentColor"\n  d="M12 2 C 15 2 17 7 17 12\n     L 17 18 L 7 18 L 7 12\n     C 7 7 9 2 12 2 Z"></path>',
+    window: '<circle cx="12" cy="10" r="2"\n  fill="var(--bg-deep)"\n  stroke="currentColor"></circle>',
+    flame:  '<g transform="rotate(-3 12 20)" fill="currentColor">\n  <polygon points="9,18 15,18 12,23"></polygon>\n</g>'
+  };
+  var checkboxes = document.querySelectorAll('[data-layer]');
+  function updateLayers() {
+    var visible = [];
+    checkboxes.forEach(function (box) {
+      var cls = "layer-" + box.dataset.layer;
+      var els = layerIcon.querySelectorAll("." + cls);
+      els.forEach(function (el) { el.style.display = box.checked ? "" : "none"; });
+      if (box.checked) visible.push(box.dataset.layer);
+    });
+    layerCode.textContent = visible.length
+      ? visible.map(function (k) { return layerSnippets[k]; }).join("\n\n")
+      : "// no layers selected";
+  }
+  checkboxes.forEach(function (box) { box.addEventListener("change", updateLayers); });
+  updateLayers();
+
+  // ---------- Section 4: group vs. child transform ----------
+  var groupEl = document.getElementById("bars-group");
+  var bar1 = document.getElementById("bar-1");
+  var groupCode = document.getElementById("group-code");
+  var radios = document.querySelectorAll('input[name="transform-target"]');
+
+  function applyTransform(target) {
+    groupEl.removeAttribute("transform");
+    bar1.removeAttribute("transform");
+    if (target === "group") {
+      groupEl.setAttribute("transform", "rotate(-8 12 12)");
+      groupCode.textContent = '<g transform="rotate(-8 12 12)">\n  <line ... x1="3" y1="6"  x2="21" y2="6"></line>\n  <line ... x1="3" y1="12" x2="21" y2="12"></line>\n  <line ... x1="3" y1="18" x2="21" y2="18"></line>\n</g>\n\n/* all three bars rotate together */';
+    } else if (target === "child") {
+      bar1.setAttribute("transform", "rotate(-8 12 12)");
+      groupCode.textContent = '<g>\n  <line transform="rotate(-8 12 12)"\n        x1="3" y1="6" x2="21" y2="6"></line>\n  <line x1="3" y1="12" x2="21" y2="12"></line>\n  <line x1="3" y1="18" x2="21" y2="18"></line>\n</g>\n\n/* only the first bar rotates */';
+    } else {
+      groupCode.textContent = '<g>\n  <line x1="3" y1="6"  x2="21" y2="6"></line>\n  <line x1="3" y1="12" x2="21" y2="12"></line>\n  <line x1="3" y1="18" x2="21" y2="18"></line>\n</g>\n\n/* no transform applied */';
+    }
+  }
+  radios.forEach(function (r) { r.addEventListener("change", function () { applyTransform(r.value); }); });
+  applyTransform("group");
+})();
+</script>
+
+</body>
+</html>
