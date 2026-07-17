@@ -45,6 +45,52 @@ header {
     color: #6335ff;
 }
 
+.go-back {
+    display: inline-block;
+    margin: 1rem 0 0 1rem;
+    color: oklch(0.6357 0.2286 354.89);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.go-back:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    border-top: 1.5px solid #e2e8f0;
+    color: #64748b;
+    font-size: 1.2rem;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer a {
+    color: #64748b;
+}
+
+.site-footer a:hover {
+    color: oklch(0.6357 0.2286 354.89);
+}
+
 .content-section {
     max-width: 900px;
     margin: auto;

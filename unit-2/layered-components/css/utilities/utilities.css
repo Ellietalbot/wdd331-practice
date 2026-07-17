@@ -10,3 +10,52 @@
 .shadow {
    box-shadow: var(--shadow-card);
 }
+
+/* Shared go-back link and footer, styled to match the rest of the portfolio. */
+.go-back {
+   color: oklch(0.6357 0.2286 354.89);
+   font-weight: 600;
+   font-size: 1.5rem;
+   text-decoration: none;
+   background-color: transparent;
+   padding: 0;
+}
+
+.go-back:hover {
+   text-decoration: underline;
+   color: oklch(0.6357 0.2286 354.89);
+   background-color: transparent;
+}
+
+.site-footer {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   gap: var(--space-sm);
+   margin-top: var(--space-lg);
+   padding: var(--space-lg);
+   border-top: 1.5px solid #e2e8f0;
+   color: #64748b;
+   font-size: 1.2rem;
+}
+
+.site-footer p {
+   margin: 0;
+}
+
+.site-footer ul {
+   display: flex;
+   gap: var(--space-md);
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.site-footer a {
+   color: #64748b;
+}
+
+.site-footer a:hover {
+   color: oklch(0.6357 0.2286 354.89);
+}

@@ -84,9 +84,57 @@ header p {
 .card p {
     padding: 1rem;
 }
+
+.go-back {
+    display: inline-block;
+    padding: 1rem 2rem 0;
+    color: oklch(0.6357 0.2286 354.89);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.go-back:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    border-top: 1.5px solid #e2e8f0;
+    color: #64748b;
+    font-size: 1.2rem;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer a {
+    color: #64748b;
+}
+
+.site-footer a:hover {
+    color: oklch(0.6357 0.2286 354.89);
+}
 </style>
 </head>
 <body>
+
+<a class="go-back" href="../../index.html">&larr; Home</a>
 
 <header>
     <h1>Backdrop Filter Performance Demo</h1>
@@ -94,6 +142,13 @@ header p {
 </header>
 
 <div class="grid" id="grid"></div>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Ellie Talbot. Built for WDD 331R Advanced CSS.</p>
+    <ul>
+        <li><a href="https://github.com/Ellietalbot/wdd331-practice">Source on GitHub</a></li>
+    </ul>
+</footer>
 
 <script>
 const grid = document.getElementById("grid");

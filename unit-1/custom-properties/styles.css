@@ -211,3 +211,52 @@ body {
     margin: 0 calc(-1 * clamp(1.6rem, 4vw, 4rem));
     margin-bottom: calc(-1 * clamp(1.6rem, 4vw, 4rem));
 }
+
+/* ========================================
+   SITE-WIDE CHROME
+   Shared go-back link and footer, styled to
+   match the rest of the portfolio.
+   ======================================== */
+.go-back {
+    color: oklch(0.6357 0.2286 354.89);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.go-back:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+    padding: var(--space-lg);
+    border-top: 1.5px solid #e2e8f0;
+    color: var(--subtext-color);
+    font-size: 1.2rem;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer ul {
+    display: flex;
+    gap: var(--space-md);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer a {
+    color: var(--subtext-color);
+}
+
+.site-footer a:hover {
+    color: oklch(0.6357 0.2286 354.89);
+}

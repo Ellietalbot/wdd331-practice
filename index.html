@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ellie Talbot - Practice Site</title>
     <script src="js/theme-preference.js"></script>
+    <script src="js/toggle-assignments.js" defer></script>
     <link rel="stylesheet" href="dist/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" aria-hidden="true">
@@ -40,6 +41,9 @@
             <path d="M13 19h8"/>
             <path d="m3 17 2 2 4-4"/>
             <path d="m3 7 2 2 4-4"/>
+        </symbol>
+        <symbol id="icon-drop-down-toggle" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
         </symbol>
     </svg>
     
@@ -85,24 +89,68 @@
             </label>
         </div>
     </details>
-    <section class="page-description">
+    <section class="hero-banner">
         <h1>Ellie Talbot</h1>
-        <h3>WDD 331R Advanced CSS</h3>
-        <P>Hi! My name is Ellie. I'm a software engineering student a BYU-Idaho. I enjoy cooking, traveling, and spending time with my family.</P>
-        <p>This is a practice site for a css class.</p>
-
+        <p>Advanced CSS Portfolio</p>
+        <a class="btn-primary" href="css-teaching-videos.html">View CSS Teaching Videos</a>
     </section>
-    <section class="assignments">
-        <h2>
-            <svg class="icon" viewBox="0 0 24 24" width="30" height="30"
+    <section class="featured-projects" id="featured-projects">
+        <h3>
+            Featured Projects
+        </h3>
+        <ul class="project-grid">
+            <li class="project-card">
+                <img class="project-card__image" src="images/Custom-properties.png" alt="" width="640" height="345" loading="lazy">
+                <span class="project-card__tag">Unit 1</span>
+                <a href="unit-1/custom-properties/index.html">
+                Custom Properties and Nesting
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
+                </a>
+            </li>
+
+            <li class="project-card">
+                <img class="project-card__image" src="images/layered-components.png" alt="" width="640" height="346" loading="lazy">
+                <span class="project-card__tag">Unit 2</span>
+                <a href="unit-2/layered-components/index.html">
+                Layered Components
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
+                </a>
+            </li>
+            <li class="project-card">
+                <img class="project-card__image" src="images/visual-effects.png" alt="" width="640" height="341" loading="lazy">
+                <span class="project-card__tag">Unit 3</span>
+                <a href="unit-3/visual-effects/index.html">
+                Visual Effects
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <use href="#icon-arrow-right"></use>
+                </svg>
+                </a>
+            </li>
+        </ul>
+        <button type="button" class="view-all-link" id="view-all-toggle" aria-expanded="false" aria-controls="assignments-section">View all Work
+            <svg class="icon" viewBox="0 0 24 24" width="24" height="24"
                 fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round"
                 aria-hidden="true" focusable="false">
-                <use href="#icon-list-checks"></use>
+                <use href="#icon-drop-down-toggle"></use>
             </svg>
-            Assignments
-        </h2>
-        <ul class="project-grid">
+        </button>
+    </section>
+    <section class="assignments" id="assignments-section" hidden>
+        <ul class="project-list">
             <li class="project-card">
                 <span class="project-card__tag">Unit 1</span>
                 <a href="unit-1/custom-properties/index.html">
@@ -242,5 +290,22 @@
 
         </ul>
     </section>
+    <section class="page-description">
+        <span class="page-description__avatar-wrap">
+            <img class="page-description__avatar" src="images/memoji.PNG" alt="Memoji avatar of Ellie Talbot" width="120" height="120">
+        </span>
+        <div class="page-description__content">
+            <h3>Ellie Talbot</h3>
+            <p>WDD 331R Advanced CSS</p>
+            <p>Hi! My name is Ellie. I'm a software engineering student a BYU-Idaho. I enjoy cooking, traveling, and spending time with my family.</p>
+            <p>This is a practice site for a css class.</p>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <p>&copy; 2026 Ellie Talbot. Built for WDD 331R Advanced CSS.</p>
+        <ul>
+            <li><a href="https://github.com/Ellietalbot/wdd331-practice">Source on GitHub</a></li>
+        </ul>
+    </footer>
 </body>
 </html>
